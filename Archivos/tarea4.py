@@ -19,17 +19,17 @@ try:
     # REQUERIMIENTO 1: Los 20 primeros hospitales del país con su número telefónico
     # -------------------------------------------------------------------------
     print("\n=======================================================")
-    print("1. TOP 20 PRIMEROS HOSPITALES DEL PAÍS CON TELÉFONO ")
+    print("1. TOP 100 PRIMEROS HOSPITALES DEL PAÍS CON TELÉFONO ")
     print("=======================================================")
 	# 1. Eliminamos duplicados por municipio (nos quedamos con el primero que aparece)
     # Usamos depa_nombre junto a muni_nombre porque hay municipios con el mismo nombre en diferentes departamentos
     df_unicos_por_muni = df.drop_duplicates(subset=['depa_nombre', 'muni_nombre'], keep='first')
     
     # 2. Ahora tomamos los 20 primeros registros de este nuevo conjunto filtrado
-    top_20_unicos = df_unicos_por_muni[['depa_nombre', 'muni_nombre', 'nombre_prestador', 'telefono']].head(20)
+    top_100_unicos = df_unicos_por_muni[['depa_nombre', 'muni_nombre', 'nombre_prestador', 'telefono']].head(20)
     
     # Imprimimos de forma limpia
-    print(top_20_unicos.to_string(index=False))
+    print(top_100_unicos.to_string(index=False))
     
        # -------------------------------------------------------------------------
     # REQUERIMIENTO: Detalle de sedes para IPS Multisede
