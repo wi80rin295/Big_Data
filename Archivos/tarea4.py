@@ -26,7 +26,7 @@ try:
     df_unicos_por_muni = df.drop_duplicates(subset=['depa_nombre', 'muni_nombre'], keep='first')
     
     # 2. Ahora tomamos los 20 primeros registros de este nuevo conjunto filtrado
-    top_100_unicos = df_unicos_por_muni[['depa_nombre', 'muni_nombre', 'nombre_prestador', 'telefono']].head(20)
+    top_100_unicos = df_unicos_por_muni[['depa_nombre', 'muni_nombre', 'nombre_prestador', 'telefono']].head(100)
     
     # Imprimimos de forma limpia
     print(top_100_unicos.to_string(index=False))
